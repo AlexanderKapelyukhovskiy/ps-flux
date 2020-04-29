@@ -1,15 +1,22 @@
 import React from "react";
-import HopePage from "./HomePage.js";
-import AboutPage from "./AboutPage.js";
+import HopePage from "./HomePage";
+import AboutPage from "./AboutPage";
+import Header from "./common/Header";
 
 function App() {
-  const route = window.location.pathname;
-
-  if (route === "/about") {
-    return <AboutPage />;
+  function getPage() {
+    const route = window.location.pathname;
+    if (route === "/about") {
+      return <AboutPage />;
+    }
+    return <HopePage />;
   }
-
-  return <HopePage />;
+  return (
+    <div className="container-fluid">
+      <Header />
+      {getPage()}
+    </div>
+  );
 }
 
 export default App;
