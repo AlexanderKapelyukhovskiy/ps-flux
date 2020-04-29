@@ -1,4 +1,6 @@
 import React from "react";
+import PropTypes from "prop-types";
+import { prototype } from "flux/lib/Dispatcher";
 
 function CourseList(props) {
   return (
@@ -22,5 +24,16 @@ function CourseList(props) {
     </table>
   );
 }
+
+CourseList.propTypes = {
+  courses: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      title: PropTypes.string.isRequired,
+      authorId: PropTypes.number.isRequired,
+      category: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+};
 
 export default CourseList;
