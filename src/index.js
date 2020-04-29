@@ -1,6 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import React from "react";
 import { render } from "react-dom";
-import HopePage from "./components/HomePage.js";
+import App from "./components/App.js";
 
-render(<HopePage />, document.getElementById("root"));
+render(<App />, document.getElementById("root"));
