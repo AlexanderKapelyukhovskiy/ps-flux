@@ -1,3 +1,5 @@
+React with Flux App Based on https://app.pluralsight.com/library/courses/react-flux-building-applications
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
