@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { prototype } from "flux/lib/Dispatcher";
+import { Link } from "react-router-dom";
 
 function CourseList(props) {
   return (
@@ -15,7 +16,9 @@ function CourseList(props) {
       <tbody>
         {props.courses.map((c) => (
           <tr key={c.id}>
-            <td>{c.title}</td>
+            <td>
+              <Link to={"/course/" + c.slug}>{c.title}</Link>
+            </td>
             <td>{c.authorId}</td>
             <td>{c.category}</td>
           </tr>
