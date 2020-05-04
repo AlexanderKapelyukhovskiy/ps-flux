@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { prototype } from "flux/lib/Dispatcher";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
 
 function CourseList(props) {
   return (
@@ -20,7 +21,11 @@ function CourseList(props) {
             <td>
               <button
                 className="btn btn-outline-danger"
-                onClick={() => props.deleteCourse(c.id)}
+                onClick={() =>
+                  props
+                    .deleteCourse(c.id)
+                    .then(() => toast.warning("Course deleted"))
+                }
               >
                 Delete
               </button>
